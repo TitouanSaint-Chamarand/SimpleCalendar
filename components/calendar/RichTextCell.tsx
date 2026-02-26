@@ -47,7 +47,7 @@ export default function RichTextCell({
 
   return (
     <div className={cn("flex flex-1 flex-col min-h-0", className)}>
-      <div className="relative min-h-0 flex-1">
+      <div className="relative min-h-0 flex-1 flex flex-col">
         {showPlaceholder && (
           <span
             className="pointer-events-none absolute left-0 top-0 text-muted-foreground"
@@ -61,7 +61,7 @@ export default function RichTextCell({
           contentEditable
           suppressContentEditableWarning
           className={cn(
-            "min-h-0 flex-1 w-full min-h-[1.5em] border-0 bg-transparent outline-none relative z-10",
+            "min-h-0 flex-1 w-full min-h-[1.5em] h-full border-0 bg-transparent outline-none relative z-10",
             "focus-visible:ring-1 focus-visible:ring-border rounded px-0 py-0"
           )}
           onInput={handleInput}

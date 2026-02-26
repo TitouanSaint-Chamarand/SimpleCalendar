@@ -19,7 +19,7 @@ export default function Calendar() {
   );
 
   return (
-    <main className="max-w-7xl mx-auto">
+    <main className="max-w-7xl mx-auto pt-20">
       <CalendarHeader
         month={month}
         year={year}
