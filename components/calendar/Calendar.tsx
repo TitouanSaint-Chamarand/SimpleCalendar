@@ -5,6 +5,7 @@ import { getCalendarGrid } from "@/lib/calendar/date-utils";
 import { useCalendarNavigation } from "@/hooks/useCalendarNavigation";
 import { useCalendarEvents } from "@/hooks/useCalendarEvents";
 import CalendarHeader from "./CalendarHeader";
+import FormattingToolbar from "./FormattingToolbar";
 import CalendarGrid from "./CalendarGrid";
 
 /** Orchestre le calendrier : navigation, événements et affichage (composition) */
@@ -25,6 +26,7 @@ export default function Calendar() {
         onPrev={goPrev}
         onNext={goNext}
       />
+      <FormattingToolbar />
       <CalendarGrid
         cells={cells}
         rows={rows}

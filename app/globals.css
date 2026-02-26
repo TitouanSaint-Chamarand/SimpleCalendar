@@ -58,6 +58,11 @@
   min-width: 0;
 }
 
+/* Rangées de jours : hauteur au moins 1.2× la largeur d’une case (plus haute que large), sinon tient dans la fenêtre */
+.calendar-grid > .calendar-row:not(.calendar-header) {
+  height: 60px;
+}
+
 .calendar-header {
   font-weight: 600;
   background: var(--foreground);
@@ -65,7 +70,8 @@
 }
 
 .calendar-cell {
-  min-height: 280px;
+  height: 100%;
+  min-height: 0;
   border: 1px solid var(--foreground);
   padding: 8px;
   display: flex;
@@ -109,7 +115,7 @@
 .calendar-cell-empty {
   display: block;
   flex: 1;
-  min-height: 200px;
+  min-height: 0;
   background: var(--background);
   opacity: 0.5;
 }
