@@ -28,6 +28,8 @@ export default function Calendar() {
       <CalendarGrid
         cells={cells}
         rows={rows}
+        year={year}
+        month={month}
         events={events}
         onEventChange={updateEvent}
       />

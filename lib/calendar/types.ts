@@ -1,5 +1,8 @@
-/** Cellule du calendrier : jour du mois (1–31) ou null si vide */
-export type CalendarCell = number | null;
+/** Une cellule : numéro du jour affiché et si c’est le mois courant (éditable) */
+export type CalendarCell = {
+  day: number;
+  isCurrentMonth: boolean;
+};
 
 /** Grille du mois : tableau de cellules (7 par ligne) */
 export type CalendarGrid = {

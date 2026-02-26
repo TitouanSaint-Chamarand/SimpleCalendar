@@ -1,6 +1,7 @@
 "use client";
 
 import { MOIS } from "@/lib/calendar/constants";
+import { Button } from "@/components/ui/button";
 
 export interface CalendarHeaderProps {
   month: number;
@@ -19,23 +20,15 @@ export default function CalendarHeader({
     <div className="flex items-center justify-between gap-4 mb-6">
       <h1 className="text-xl font-semibold">Calendrier</h1>
       <div className="flex items-center gap-2">
-        <button
-          type="button"
-          onClick={onPrev}
-          className="px-3 py-1.5 rounded border border-foreground/20 hover:bg-foreground/10 transition-colors"
-        >
+        <Button type="button" variant="outline" size="sm" onClick={onPrev}>
           ← Mois précédent
-        </button>
+        </Button>
         <span className="font-medium min-w-[180px] text-center">
           {MOIS[month]} {year}
         </span>
-        <button
-          type="button"
-          onClick={onNext}
-          className="px-3 py-1.5 rounded border border-foreground/20 hover:bg-foreground/10 transition-colors"
-        >
+        <Button type="button" variant="outline" size="sm" onClick={onNext}>
           Mois suivant →
-        </button>
+        </Button>
       </div>
     </div>
   );

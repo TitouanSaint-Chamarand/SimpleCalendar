@@ -1,33 +1,38 @@
 "use client";
 
-import type { CalendarCell as CalendarCellType } from "@/lib/calendar/types";
+import RichTextCell from "./RichTextCell";
 
 export interface CalendarCellProps {
-  day: CalendarCellType;
+  day: number;
+  isCurrentMonth: boolean;
+  isToday?: boolean;
   value: string;
   onEventChange: (day: number, value: string) => void;
 }
 
 export default function CalendarCell({
   day,
+  isCurrentMonth,
+  isToday = false,
   value,
   onEventChange,
 }: CalendarCellProps) {
-  if (day === null) {
-    return <span className="calendar-cell-empty" />;
-  }
-
   return (
-    <>
-      <span className="calendar-day-num">{day}</span>
-      <textarea
-        className="calendar-textarea"
-        value={value}
-        onChange={(e) => onEventChange(day, e.target.value)}
-        onBlur={(e) => onEventChange(day, e.target.value)}
-        placeholder="Événements…"
-        rows={5}
-      />
-    </>
+    <div className="flex flex-1 flex-col min-h-0">
+      <span
+        className={`calendar-day-num shrink-0 ${isToday ? "calendar-day-num-today" : ""}`}
+      >
+        {day}
+      </span>
+      {isCurrentMonth ? (
+        <RichTextCell
+          value={value}
+          onChange={(html) => onEventChange(day, html)}
+          placeholder="Note…"
+        />
+      ) : (
+        <span className="flex-1 min-h-0 block" aria-hidden />
+      )}
+    </div>
   );
 }
