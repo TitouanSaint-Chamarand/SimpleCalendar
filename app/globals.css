@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Calendrier mensuel */
+.calendar-grid {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--foreground);
+  border-radius: 4px;
+}
+
+.calendar-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  min-width: 0;
+}
+
+.calendar-header {
+  font-weight: 600;
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.calendar-cell {
+  min-height: 100px;
+  border: 1px solid var(--foreground);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.calendar-cell-header {
+  padding: 8px 4px;
+  text-align: center;
+  min-height: auto;
+}
+
+.calendar-day-num {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.calendar-textarea {
+  flex: 1;
+  min-height: 60px;
+  width: 100%;
+  padding: 6px;
+  font-size: 0.875rem;
+  resize: vertical;
+  border: 1px solid var(--foreground);
+  border-radius: 2px;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.calendar-textarea:focus {
+  outline: 2px solid var(--foreground);
+  outline-offset: 1px;
+}
+
+.calendar-cell-empty {
+  display: block;
+  flex: 1;
+  min-height: 60px;
+  background: var(--background);
+  opacity: 0.5;
+}
