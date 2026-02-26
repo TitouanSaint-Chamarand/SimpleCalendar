@@ -1,0 +1,26 @@
+---
+description: Tailwind v4 et variables CSS du projet
+globs: "**/*.tsx,**/*.css"
+alwaysApply: false
+---
+
+# Tailwind v4 & CSS
+
+## Tailwind
+- Le projet utilise Tailwind v4 avec `@import "tailwindcss"` dans `app/globals.css`.
+- Utiliser les classes utilitaires Tailwind dans les composants (ex. `className="flex gap-4 p-4"`).
+- Préférer les tokens du thème : `bg-background`, `text-foreground`, `border-foreground/20` (définis via `@theme inline`).
+
+## Variables CSS & thème
+- Couleurs sémantiques dans `:root` : `--background`, `--foreground`. Exposées dans Tailwind via `@theme inline { --color-background: var(--background); }`.
+- Dark mode géré avec `@media (prefers-color-scheme: dark)` dans `globals.css`.
+
+## Conventions
+- Styles globaux (ex. grille calendrier) dans `app/globals.css` avec des classes dédiées (ex. `.calendar-grid`).
+- Pour les composants : privilégier `className` avec utilitaires Tailwind ; utiliser des classes CSS personnalisées seulement quand c’est plus lisible (ex. bloc réutilisable).
+
+## Exemple
+```tsx
+<div className="min-h-screen bg-background text-foreground p-4 md:p-8">
+  <button className="px-3 py-1.5 rounded border border-foreground/20 hover:bg-foreground/10 transition-colors">
+```

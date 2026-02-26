@@ -1,0 +1,30 @@
+---
+description: Patterns React (composants, hooks, client)
+globs: "**/*.tsx"
+alwaysApply: false
+---
+
+# React (composants & hooks)
+
+## Client vs Server
+- Ajouter `"use client"` en première ligne uniquement si le composant utilise : `useState`, `useEffect`, gestionnaires d’événements, ou APIs navigateur (localStorage, etc.).
+- Garder les pages/layouts sans état en Server Components quand c’est possible.
+
+## Composants
+- Composants fonctionnels uniquement. Exporter le composant principal en `export default` pour les pages.
+- Extraire la logique réutilisable dans des custom hooks (`useCallback`, `useState`, etc.) ou des sous-composants.
+
+## Événements et accessibilité
+- Utiliser `type="button"` sur les `<button>` qui ne soumettent pas de formulaire.
+- Préférer des labels/clés explicites pour les listes (`key={id}` ou index si pas d’id).
+
+## Exemple
+```tsx
+"use client";
+import { useState, useCallback } from "react";
+export default function MaPage() {
+  const [value, setValue] = useState(0);
+  const handleClick = useCallback(() => setValue((v) => v + 1), []);
+  return <button type="button" onClick={handleClick}>...</button>;
+}
+```

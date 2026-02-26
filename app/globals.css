@@ -46,9 +46,9 @@ body {
 }
 
 .calendar-cell {
-  min-height: 100px;
+  min-height: 280px;
   border: 1px solid var(--foreground);
-  padding: 4px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -68,10 +68,10 @@ body {
 
 .calendar-textarea {
   flex: 1;
-  min-height: 60px;
+  min-height: 200px;
   width: 100%;
-  padding: 6px;
-  font-size: 0.875rem;
+  padding: 8px;
+  font-size: 0.9375rem;
   resize: vertical;
   border: 1px solid var(--foreground);
   border-radius: 2px;
@@ -87,7 +87,7 @@ body {
 .calendar-cell-empty {
   display: block;
   flex: 1;
-  min-height: 60px;
+  min-height: 200px;
   background: var(--background);
   opacity: 0.5;
 }
