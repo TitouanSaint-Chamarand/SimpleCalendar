@@ -61,7 +61,7 @@ export default function RichTextCell({
           contentEditable
           suppressContentEditableWarning
           className={cn(
-            "min-h-0 flex-1 w-full min-h-[1.5em] h-full border-0 bg-transparent outline-none relative z-10",
+            "min-h-[80px] flex-1 w-full h-full border-0 bg-transparent outline-none relative z-10",
             "focus-visible:ring-1 focus-visible:ring-border rounded px-0 py-0"
           )}
           onInput={handleInput}

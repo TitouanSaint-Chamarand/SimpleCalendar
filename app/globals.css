@@ -60,7 +60,7 @@
 
 /* Rangées de jours : hauteur au moins 1.2× la largeur d’une case (plus haute que large), sinon tient dans la fenêtre */
 .calendar-grid > .calendar-row:not(.calendar-header) {
-  height: 60px;
+  height: 220px;
 }
 
 .calendar-header {
